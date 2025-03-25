@@ -1,0 +1,16 @@
+.main-image img {
+    max-width:600px;
+    height:auto;
+}
+.thumbnail img {
+    width: 80px;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.thumbnail-gallery img.active {
+    border: 2px solid blue;
+    transition: border 0.3s;
+}

@@ -1,0 +1,30 @@
+<div class="container text-center mt-5">
+  <div class="main-image">
+    <!-- main image section -->
+    <img [src]="currentImage.src" [alt]="currentImage.alt" class="img-fluid border rounded shadow-lg">
+    <p class="mt-2">{{currentImage.alt}}</p>
+
+    <!-- navigation buttons -->
+    <div class="mt-3">
+      <button class="btn btn-primary me-2" (click)="previousImage()" [disabled]="currentImageIndex === 0">Previous</button>
+      <button class="btn btn-primary" (click)="nextImage()" [disabled]="currentImageIndex === images.length - 1">Next</button>
+
+    </div>
+
+    <!--  thumbnails gallery-->
+    <div class="mt-4 thumbnail-gallery d-flex justify-content-center">
+      <div *ngFor="let image of images; let i = index" class="thumbnail mt-2">
+        <img 
+            [src]="image.src" 
+            [alt]="image.alt" 
+            class="img-fluid border rounded shadow-lg img-thumbnail"
+            [class.active]="currentImageIndex === i"
+            (click)="setImage(i)">
+      </div>
+    </div>
+
+    <!-- image counter -->
+    <p class="mt-3">Image {{currentImageIndex + 1}} of {{images.length}}</p> 
+
+
+  </div>
