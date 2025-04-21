@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-gallery',
   standalone: false,
   templateUrl: './gallery.component.html',
-  styleUrls: './gallery.component.css'
+  styleUrls: ['./gallery.component.css'],
 })
 export class GalleryComponent {
 
